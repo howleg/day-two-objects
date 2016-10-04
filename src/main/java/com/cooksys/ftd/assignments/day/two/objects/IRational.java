@@ -91,7 +91,15 @@ interface IRational {
      * @throws IllegalArgumentException if that is null
      */
     default IRational mul(IRational that) throws IllegalArgumentException {
-        throw new NotImplementedException();
+    	
+        int num;
+        int dem;
+        num = getNumerator()* that.getNumerator();
+        dem = getDenominator()* that.getNumerator();
+        
+        if ( construct(num, dem) == null ) throw new IllegalArgumentException();
+        else
+        	return construct(num, dem);
     }
 
     /**
@@ -105,6 +113,14 @@ interface IRational {
      * @throws IllegalArgumentException if that is null or if the numerator of that is 0
      */
     default IRational div(IRational that) throws IllegalArgumentException {
-        throw new NotImplementedException();
+    	int num;
+        int dem;
+        
+        
+        
+        
+        
+        
+        
     }
 }
