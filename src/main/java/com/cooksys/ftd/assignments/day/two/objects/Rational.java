@@ -1,7 +1,5 @@
 package com.cooksys.ftd.assignments.day.two.objects;
 
-import sun.reflect.generics.reflectiveObjects.NotImplementedException;
-
 public class Rational implements IRational {
 
 	private int numerator;
@@ -23,12 +21,13 @@ public class Rational implements IRational {
 	 *             if the given denominator is 0
 	 */
 	public Rational(int numerator, int denominator) throws IllegalArgumentException {
-		
-		if(denominator == 0) throw new IllegalArgumentException();
-		
+
+		if (denominator == 0)
+			throw new IllegalArgumentException();
+
 		this.numerator = numerator;
 		this.denominator = denominator;
-		
+
 	}
 
 	/**
@@ -38,6 +37,7 @@ public class Rational implements IRational {
 	public int getNumerator() {
 
 		return this.numerator;
+
 	}
 
 	/**
@@ -66,7 +66,12 @@ public class Rational implements IRational {
 	 */
 	@Override
 	public Rational construct(int numerator, int denominator) throws IllegalArgumentException {
-		throw new NotImplementedException();
+
+		if (denominator == 0)
+			throw new IllegalArgumentException();
+
+		return new Rational(numerator, denominator);
+
 	}
 
 	/**
@@ -103,6 +108,11 @@ public class Rational implements IRational {
 	@Override
 	public String toString() {
 
-		return (numerator < 0 != denominator < 0 ? "-" : "") + Math.abs(numerator) + "/" + Math.abs(denominator), r.toString());
+		String str = Math.abs(numerator) + "/" + Math.abs(denominator);
+
+		// return (numerator < 0 != denominator < 0 ? "-" : "") + str;
+
+		return (numerator < 0 && denominator > 0 || numerator > 0 && denominator < 0 ? "-" : "") + str;
+
 	}
 }
