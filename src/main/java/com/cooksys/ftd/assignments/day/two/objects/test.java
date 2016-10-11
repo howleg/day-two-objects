@@ -10,7 +10,7 @@ public class test {
 
 		System.out.print(rt + " + " + st + " = " );
 		
-		System.out.println(rt.add(st));
+		rt.add(st);
 		
 		
 	}
